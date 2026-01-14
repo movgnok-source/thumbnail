@@ -1,6 +1,6 @@
 {
     "name": "thumbnail-generator-desktop",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Desktop app for creating video thumbnails - สร้าง Thumbnail วีดีโอแบบออฟไลน์",
     "main": "main.js",
     "scripts": {
@@ -50,20 +50,14 @@
                     ]
                 }
             ],
-            "icon": "assets/icon.ico",
             "artifactName": "${productName}-${version}-portable.${ext}"
         },
         "mac": {
-            "target": "dmg",
-            "icon": "assets/icon.icns"
+            "target": "dmg"
         },
         "linux": {
             "target": "AppImage",
-            "icon": "assets/icon.png",
             "category": "Graphics"
-        },
-        "portable": {
-            "artifactName": "${productName}-${version}-portable.exe"
         }
     }
 }
