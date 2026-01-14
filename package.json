@@ -1,6 +1,6 @@
 {
     "name": "thumbnail-generator-desktop",
-    "version": "1.0.1",
+    "version": "1.0.3",
     "description": "Desktop app for creating video thumbnails - สร้าง Thumbnail วีดีโอแบบออฟไลน์",
     "main": "main.js",
     "scripts": {
@@ -26,7 +26,8 @@
     "dependencies": {
         "@ffmpeg-installer/ffmpeg": "^1.1.0",
         "@ffprobe-installer/ffprobe": "^2.1.2",
-        "fluent-ffmpeg": "^2.1.2"
+        "fluent-ffmpeg": "^2.1.2",
+        "which": "^2.0.2"
     },
     "build": {
         "appId": "com.gnok.thumbnail-generator",
@@ -39,7 +40,8 @@
             "!node_modules/**/*",
             "node_modules/@ffmpeg-installer/**/*",
             "node_modules/@ffprobe-installer/**/*",
-            "node_modules/fluent-ffmpeg/**/*"
+            "node_modules/fluent-ffmpeg/**/*",
+            "node_modules/which/**/*"
         ],
         "win": {
             "target": [
