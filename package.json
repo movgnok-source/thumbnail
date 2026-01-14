@@ -1,0 +1,69 @@
+{
+    "name": "thumbnail-generator-desktop",
+    "version": "1.0.0",
+    "description": "Desktop app for creating video thumbnails - สร้าง Thumbnail วีดีโอแบบออฟไลน์",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "build": "electron-builder",
+        "build:win": "electron-builder --win --x64",
+        "build:mac": "electron-builder --mac",
+        "build:linux": "electron-builder --linux"
+    },
+    "keywords": [
+        "thumbnail",
+        "video",
+        "generator",
+        "ffmpeg",
+        "electron"
+    ],
+    "author": "Gnok.dev",
+    "license": "MIT",
+    "devDependencies": {
+        "electron": "^28.0.0",
+        "electron-builder": "^24.9.1"
+    },
+    "dependencies": {
+        "@ffmpeg-installer/ffmpeg": "^1.1.0",
+        "@ffprobe-installer/ffprobe": "^2.1.2",
+        "fluent-ffmpeg": "^2.1.2"
+    },
+    "build": {
+        "appId": "com.gnok.thumbnail-generator",
+        "productName": "Thumbnail Generator",
+        "directories": {
+            "output": "dist"
+        },
+        "files": [
+            "**/*",
+            "!node_modules/**/*",
+            "node_modules/@ffmpeg-installer/**/*",
+            "node_modules/@ffprobe-installer/**/*",
+            "node_modules/fluent-ffmpeg/**/*"
+        ],
+        "win": {
+            "target": [
+                {
+                    "target": "portable",
+                    "arch": [
+                        "x64"
+                    ]
+                }
+            ],
+            "icon": "assets/icon.ico",
+            "artifactName": "${productName}-${version}-portable.${ext}"
+        },
+        "mac": {
+            "target": "dmg",
+            "icon": "assets/icon.icns"
+        },
+        "linux": {
+            "target": "AppImage",
+            "icon": "assets/icon.png",
+            "category": "Graphics"
+        },
+        "portable": {
+            "artifactName": "${productName}-${version}-portable.exe"
+        }
+    }
+}
